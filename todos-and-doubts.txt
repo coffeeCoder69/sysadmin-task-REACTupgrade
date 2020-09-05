@@ -1,0 +1,10 @@
+TEST USERS:(I'm not sure though)
+
+email : test@gmail.com 
+pass : password 
+type : NON-ADMIN (BASIC)
+
+
+email : admin@gmail.com 
+pass : password 
+type : ADMIN
