@@ -8,3 +8,11 @@ type : NON-ADMIN (BASIC)
 email : admin@gmail.com 
 pass : password 
 type : ADMIN
+
+
+Another way to connect to the DB would be:
+
+const dbURI = ****MongoDB Atlas URL goes here***
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true })
+  .then((result) => app.listen(3000))
+  .catch((err) => console.log(err));
