@@ -31,12 +31,12 @@
                             <form class="form" role="form" autocomplete="off" id="formLogin"  method="POST">
                                 <div class="form-group">
                                     <label>E-mail:</label>
-                                    <input  type="email" class="form-control form-control-lg rounded-0" id="email"  autocomplete="new-password" required>
+                                    <input name="email" type="email" class="form-control form-control-lg rounded-0" id="email"  autocomplete="new-password" required>
                
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input  type="password" class="form-control form-control-lg rounded-0" id="pwd1" required>
+                                    <input  name="pass" type="password" class="form-control form-control-lg rounded-0" id="pwd1" required>
                         
                                 </div>
                                 <div>
@@ -44,7 +44,7 @@
                                      New user? <a href="/signup" class="register-form-link">Sign Up</a>
                                     </label>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin">Login</button>
+                                <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" formaction="/login">Login</button>
                             </form>
                         </div>
                     </div>

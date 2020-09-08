@@ -7,10 +7,11 @@ module.exports.login_get = (req, res) => {
   res.render("login");
 };
 
-module.exports.signup_post = async (req, res) => {
+module.exports.signup_post =  (req, res) => {
   res.send("New SignUp");
 };
 
-module.exports.login_post = async (req, res) => {
+module.exports.login_post = (req, res) => {
+  console.log(req.body);
   res.send("User Login");
 };

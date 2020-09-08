@@ -5,15 +5,15 @@
 # SysAdmin Task-1 Portal
 
 ### Test Users
-1. email : test@gmail.com 
-pass : password 
-type : NON-ADMIN (BASIC)
+name: ADMIN  
+email : testuser@testuser  
+pass : onlyuserknowsthispassword  
+>>type : NON-ADMIN (BASIC)  
 
-
-2. email : admin@gmail.com 
-pass : password 
-type : ADMIN
-
+name: TEST USER  
+email : admin@admin  
+pass : onlyadminknowsthispassword  
+>>type : ADMIN  
 ***
 
 ***
