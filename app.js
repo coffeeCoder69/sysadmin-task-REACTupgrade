@@ -1,11 +1,14 @@
-//Environment Variables from the .env file 
+//Environment Variables from the .env file
 require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-//const sessions = require("express-sessions");
-const morgan = require("morgan");
+const logger = require("morgan");
 
+const authRoutes = require("./routes/authRoutes");
+const indexRoute = require("./routes/indexRoute");
+
+//express app
 const app = express();
 
 //static files inside the public folder
@@ -22,7 +25,7 @@ const db = mongoose.connection;
 db.on("error", (error) => console.log(error));
 db.once("open", () => console.log("Connected to DB"));
 
-app.use(morgan("dev"));
+app.use(logger("dev"));
 app.use(express.json());
 
 //listening at port 3000
@@ -31,13 +34,8 @@ app.listen(3000, () => {
 });
 
 // routes
-app.get("/", (req, res) => res.render("index"));
-app.get("/login", (req, res) => res.render("login"));
-app.get("/signup", (req, res) => res.render("signup"));
-// app.post
-// app.get()
-// app.get('/user')
-// app.get('/admin')
+app.use(indexRoute);
+app.use(authRoutes);
 
 //last middleware for 404 error
 app.use((req, res) => res.status(404).render("404"));
