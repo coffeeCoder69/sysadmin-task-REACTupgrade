@@ -5,15 +5,16 @@
 # SysAdmin Task-1 Portal
 
 ### Test Users
-name: ADMIN  
+name: TESTUSER   
 email : testuser@testuser  
 pass : onlyuserknowsthispassword  
->>type : NON-ADMIN (BASIC)  
+type - NON-ADMIN (BASIC)  
 
-name: TEST USER  
+name: ADMIN   
 email : admin@admin  
 pass : onlyadminknowsthispassword  
->>type : ADMIN  
-***
+type - ADMIN  
 
 ***
+
+

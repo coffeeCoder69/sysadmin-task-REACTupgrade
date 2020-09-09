@@ -1,6 +1,6 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const logger = require("morgan");
+const mongoose = require("mongoose");
 
 const authRoutes = require("./routes/authRoutes");
 const indexRoute = require("./routes/indexRoute");
@@ -33,7 +33,7 @@ app.listen(3000, () => {
   console.log("Server has started at localhost:3000");
 });
 
-// routes
+// middlewares for routing
 app.use(indexRoute);
 app.use(authRoutes);
 
