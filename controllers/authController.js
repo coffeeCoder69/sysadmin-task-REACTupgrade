@@ -1,9 +1,11 @@
 const User = require("../models/User");
 
-// handle errors
+// To manage errors during submit the form
 const handleErrors = (err) => {
-  console.log(err.message, err.code);
-  let errors = { name: '', email: '', pass: '' };
+  console.log(err.message, err.code); // logging the message and code property(for unique error)
+
+  //sent as json to be sent back to the user 
+  let errors = { name:'', email: '', pass: '' };
 
   // duplicate email error
   if (err.code === 11000) {
