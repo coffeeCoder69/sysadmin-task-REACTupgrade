@@ -4,16 +4,25 @@
 
 # SysAdmin Task-1 Portal
 
-### Test Users
-name: TESTUSER   
-email : testuser@testuser  
-pass : onlyuserknowsthispassword  
-type - NON-ADMIN (BASIC)  
+To run this Web Application in your local device
+- Fork or Clone this repository
+- create a **.env** folder with environment variables **DATABSE_URL** assigned to your MongoDB Atlas or Local Data Base URL 
+- use **npm install** to get the **node_modules** folder with required dependencies
+- 
 
-name: ADMIN   
-email : admin@admin  
+
+### Test Users
+(for my Cloud DataBase , will depend on what you keep)  
+
+name: ADMIN  
+email : admin@gmail.com  
 pass : onlyadminknowsthispassword  
 type - ADMIN  
+  
+name: TESTUSER   
+email : testuser@gmail.com  
+pass : onlyuserknowsthispassword  
+type - NON-ADMIN (BASIC)  
 
 ***
 
