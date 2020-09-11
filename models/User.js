@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
 const userSchema = new Schema({
   name: {
     type: String,
-    required: [true, 'Please enter an name'],
+    required: [true, 'Please enter a name'],
   },
   email: {
     type: String,
@@ -25,7 +25,7 @@ const userSchema = new Schema({
 });
 
 //hashing the password
-//this function fires before is doc saved to db
+//this function fires before doc is saved to db
 userSchema.pre( 'save', async function (next){
   const salt = await bcrypt.genSalt();
   this.pass = await bcrypt.hash(this.pass, salt);
