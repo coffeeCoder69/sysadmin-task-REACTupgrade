@@ -1,101 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="icon" href="assets/tt.png"> 
+    <link rel="icon" href="assets/tt.png">
     <link rel="stylesheet" href="styles/login-signup.css">
-    
+
     <script>
-        function checkPassword(form) { 
-    pass = form.pwd1.value; 
-    confirmpass = form.pwd2.value; 
+        function checkPassword(form) {
+            pass = form.pwd1.value;
+            confirmpass = form.pwd2.value;
 
-    // If password not entered 
-    if (pass == '') {
-        alert ("Please enter Password"); 
-        return false;
-          
-    }
-       
-    // If confirm password not entered 
-    else if (confirmpass == '') 
-    {
-        alert ("Please re-type Password"); 
-        return false;
-          
-    }
-          
-    // If Not same return False.     
-    else if (pass != confirmpass) { 
-        alert ("\nPassword did not match: Please try again...") 
-        return false; 
-    } 
+            // If password not entered 
+            if (pass == '') {
+                alert("Please enter Password");
+                return false;
 
-    // If same return True. 
-   
-} 
+            }
+
+            // If confirm password not entered 
+            else if (confirmpass == '') {
+                alert("Please re-type Password");
+                return false;
+
+            }
+
+            // If Not same return False.     
+            else if (pass != confirmpass) {
+                alert("\nPassword did not match: Please try again...")
+                return false;
+            }
+
+            // If same return True. 
+
+        }
 
     </script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
 
-<!------ Include the above in your HEAD tag ---------->
+    <!------ Include the above in your HEAD tag ---------->
 
- <div class="container py-5">
-    <div class="row">
-        <div class="col-md-12">
-		<div class="col-md-12 text-center mb-5">
-            <img src="assets/tt.png" style="border-radius: 10%;">
-			</div>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-					    <!-- form card register -->
-                    <div class="card rounded-0" id="register-form">
-                        <div class="card-header">
-                            <h3 class="mb-0">Sign Up</h3>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12 text-center mb-5">
+                    <img src="assets/tt.png" style="border-radius: 10%;">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <!-- form card register -->
+                        <div class="card rounded-0" id="register-form">
+                            <div class="card-header">
+                                <h3 class="mb-0">Sign Up</h3>
+                            </div>
+                            <div class="card-body">
+                                <form action="/signup" class="form" role="form" autocomplete="off" id="formLogin"
+                                    onsubmit="return checkPassword(this) ">
+
+                                    <div class="form-group">
+                                        <label for="uname1">Name: </label>
+                                        <input name="name" type="text" class="form-control form-control-lg rounded-0"
+                                            id="name1" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>E-mail:</label>
+                                        <input name="email" type="email" class="form-control form-control-lg rounded-0"
+                                            id="" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password: </label>
+
+                                        <input name="pass" type="password"
+                                            class="form-control form-control-lg rounded-0" id="pwd1"
+                                            placeholder='Min 6 characters'>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Retype Password: </label>
+                                        <input type="password" class="form-control form-control-lg rounded-0" id="pwd2">
+                                    </div>
+                                    <div>
+                                        <label class="custom-control custom-checkbox">
+                                            Have an account? <a href="/login" class="login-form-link">Login.</a>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-lg float-right"
+                                        id="btnLogin">Register</button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <form class="form" role="form" autocomplete="off" id="formLogin"  method="POST" onsubmit="return checkPassword(this) ">
-                                
-								<div class="form-group">
-                                    <label for="uname1">Name: </label>
-                                    <input name="name" type="text" class="form-control form-control-lg rounded-0"  id="name1" placeholder='Please enter your name' required>
-
-                                </div>
-                                <div class="form-group">
-                                    <label>E-mail:</label>
-                                    <input name="email" type="email" class="form-control form-control-lg rounded-0" id="" placeholder='Your email id' required >
-               
-                                </div>
-                                <div class="form-group">
-                                    <label>Password: </label>
-
-                                    <input name="pass" type="password" class="form-control form-control-lg rounded-0" id="pwd1" placeholder='Please enter a Password (Min 6 characters)' >        
-  
-                                </div>
-								<div class="form-group">
-                                    <label>Retype Password: </label>
-                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd2" placeholder='Please re-type Password' >
-                                </div>
-                                <div>
-                                    <label class="custom-control custom-checkbox">
-                                     Have an account? <a href="/login" class="login-form-link">Login.</a>
-                                    </label>
-                                </div>
-                                <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" formaction="/signup">Register</button>
-                            </form>
-                        </div>
+                        <!-- /form card register end -->
                     </div>
-                    <!-- /form card register end -->
                 </div>
             </div>
         </div>
     </div>
-    </div>
 </body>
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        // get values
+        const name = form.name.value;
+        const email = form.email.value;
+        const pass = form.pass.value;
+
+        try {
+            const res = await fetch('/signup', {
+                method: 'POST',
+                body: JSON.stringify({ name, email, pass }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    });
+</script>
+
 </html>

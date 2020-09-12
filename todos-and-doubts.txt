@@ -1,16 +1,3 @@
-TEST USERS:(I'm not sure though)
-
-name: ADMIN
-email : testuser@testuser
-pass : onlyuserknowsthispassword
->>type : NON-ADMIN (BASIC)
-
-name: TEST USER
-email : admin@admin
-pass : onlyadminknowsthispassword
->>type : ADMIN
-
-
 Other ways to connect to the DB would be:
 
 

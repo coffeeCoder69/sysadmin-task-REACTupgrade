@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 const authRoutes = require("./routes/authRoutes");
 const indexRoute = require("./routes/indexRoute");
@@ -24,9 +25,11 @@ app.use(express.static("public"));
 //view engine
 app.set("view engine", "ejs");
 
+//middlewares
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 //listening at port 3000
 app.listen(3000, () => {
