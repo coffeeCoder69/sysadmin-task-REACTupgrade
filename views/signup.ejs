@@ -114,6 +114,11 @@
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        // reset errors if already existing
+        nameError.textContent = '';
+        emailError.textContent = '';
+        passError.textContent = '';
         // get values
         const name = form.name.value;
         const email = form.email.value;
@@ -133,6 +138,9 @@
                 nameError.textContent = data.errors.name;
                 emailError.textContent = data.errors.email;
                 passError.textContent = data.errors.pass;
+            }
+            if (data.user) {
+                location.assign('/');
             }
         }
         catch (err) {

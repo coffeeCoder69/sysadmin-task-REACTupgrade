@@ -18,7 +18,7 @@
 (For other dependencies check out package.json file)  
 
 *** 
-To run this Web Application in your local device,
+To run this Web Application on your local device,
 - Fork or Clone this repository
 - Create a **.env** folder with environment variables **DATABSE_URL** assigned to your MongoDB Atlas or Local Data Base URL 
 - Use command **npm install** to get the **node_modules** folder with the required dependencies

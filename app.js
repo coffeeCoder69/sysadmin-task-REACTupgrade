@@ -1,12 +1,12 @@
 const express = require("express");
-const logger = require("morgan");
 const mongoose = require("mongoose");
+const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 
 const indexRoute = require("./routes/indexRoute");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
-const adminRoutes = require("./routes/adminroutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 //Environment Variables from the .env file and connect to the DB
 require("dotenv").config();
@@ -24,7 +24,7 @@ const app = express();
 
 //static files inside the public folder
 app.use(express.static("public"));
-//view engine
+//view engine set as ejs
 app.set("view engine", "ejs");
 
 //middlewares
@@ -41,6 +41,8 @@ app.listen(3000, () => {
 // middlewares for routing
 app.use(indexRoute);
 app.use(authRoutes);
+//app.use(userRoutes);
+app.use(adminRoutes);
 
 //last middleware for 404 error
 app.use((req, res) => res.status(404).render("404"));

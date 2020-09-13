@@ -1,69 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Log In</title>
-    <link rel="icon" href="assets/tt.png"> 
+    <link rel="icon" href="assets/tt.png">
     <link rel="stylesheet" href="styles/login-signup.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+
 </head>
 
 <body>
- <div class="container py-5">
-    <div class="row">
-        <div class="col-md-12">
-		<div class="col-md-12 text-center mb-5">
-            <img src="assets/tt.png" style="border-radius: 10%;">
-			</div>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <!-- form card login -->
-                    <div class="card rounded-0" id="login-form">
-                        <div class="card-header">
-                            <h3 class="mb-0">User Login</h3>
-                        </div>
-                        <div class="card-body">
-                            <form class="form" role="form" autocomplete="off" id="formLogin"  method="POST">
-                                <div class="form-group">
-                                    <label>E-mail:</label>
-                                    <input name="email" type="email" class="form-control form-control-lg rounded-0" id="email"  autocomplete="new-password"  required>
-               
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input  name="pass" type="password" class="form-control form-control-lg rounded-0" id="pwd1"  required>
-                        
-                                </div>
-                                <div>
-                                    <label class="custom-control custom-checkbox">
-                                     New user? <a href="/signup" class="register-form-link">Sign Up</a>
-                                    </label>
-                                </div>
-                                <button type="submit" class="btn btn-success btn-lg float-right" id="btnLogin" formaction="/login">Login</button>
-                            </form>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12 text-center mb-5">
+                    <img src="assets/tt.png" style="border-radius: 10%;">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <!-- form card login -->
+                        <div class="card rounded-0" id="login-form">
+                            <div class="card-header">
+                                <h3 class="mb-0">User Login</h3>
+                            </div>
+                            <div class="card-body">
+                                <form class="form" role="form" autocomplete="off" id="formLogin">
+                                    <div class="form-group">
+                                        <label>E-mail:</label>
+                                        <input name="email" type="email" class="form-control form-control-lg rounded-0"
+                                            id="email" autocomplete="new-password" required>
+                                        <div class="email error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input name="pass" type="password"
+                                            class="form-control form-control-lg rounded-0" id="pwd1" required>
+                                        <div class="pass error"></div>
+                                    </div>
+                                    <div>
+                                        <label class="custom-control custom-checkbox">
+                                            New user? <a href="/signup" class="register-form-link">Sign Up</a>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-lg float-right"
+                                        id="btnLogin">Login</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
 
 </body>
 <script>
     const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // get values
-      const name = form.name.value;
-      const email = form.email.value;
-      const pass = form.pass.value;
-      console.log(email, password);
+    const emailError = document.querySelector('.email.error');
+    const passError = document.querySelector('.pass.error');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        // reset errors
+        emailError.textContent = '';
+        passError.textContent = '';
+        // get values
+        const email = form.email.value;
+        const pass = form.pass.value;
+        try {
+            const res = await fetch('/login', {
+                method: 'POST',
+                body: JSON.stringify({ email, pass }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+            const data = await res.json();
+            console.log(data);
+            if (data.errors) {
+                emailError.textContent = data.errors.email;
+                passError.textContent = data.errors.pass;
+            }
+            if (data.user) {
+                location.assign('/');
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
     });
 </script>
 
