@@ -3,8 +3,10 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
-const authRoutes = require("./routes/authRoutes");
 const indexRoute = require("./routes/indexRoute");
+const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRoutes");
+const adminRoutes = require("./routes/adminroutes");
 
 //Environment Variables from the .env file and connect to the DB
 require("dotenv").config();
