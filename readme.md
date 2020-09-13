@@ -4,25 +4,25 @@
 
 # SysAdmin Task-1 Portal
 
+### Tech Stack
+#### Front-End
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+#### Back-End
+- Nodejs  
+- Express  
+- MongoDB  
+(For other dependencies check out package.json file)  
+
+*** 
 To run this Web Application in your local device,
 - Fork or Clone this repository
 - create a **.env** folder with environment variables **DATABSE_URL** assigned to your MongoDB Atlas or Local Data Base URL 
 - use command **npm install** to get the **node_modules** folder with the required dependencies
 - 
 ***
-### Tech Stack
-#### Front-End
-- HTML
-- CSS
-- JavaScript
-- BootStrap
-#### Back-End
-- Nodejs  
-- Express  
-- MongoDB  
-(For other dependencies check package.json file)  
-
-*** 
 
 ### Test Users
 (for my Cloud DataBase , will depend on what you keep) 

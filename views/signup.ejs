@@ -68,13 +68,13 @@
                                         <label for="uname1">Name: </label>
                                         <input name="name" type="text" class="form-control form-control-lg rounded-0"
                                             id="name1" required>
-
+                                        <div class="name error"></div>
                                     </div>
                                     <div class="form-group">
                                         <label>E-mail:</label>
                                         <input name="email" type="email" class="form-control form-control-lg rounded-0"
                                             id="" required>
-
+                                        <div class="email error"></div>
                                     </div>
                                     <div class="form-group">
                                         <label>Password: </label>
@@ -82,7 +82,7 @@
                                         <input name="pass" type="password"
                                             class="form-control form-control-lg rounded-0" id="pwd1"
                                             placeholder='Min 6 characters'>
-
+                                        <div class="pass error"></div>
                                     </div>
                                     <div class="form-group">
                                         <label>Retype Password: </label>
@@ -107,6 +107,11 @@
 </body>
 <script>
     const form = document.querySelector('form');
+
+    const nameError = document.querySelector('.name.error')
+    const emailError = document.querySelector('.email.error');
+    const passError = document.querySelector('.pass.error');
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         // get values
@@ -120,6 +125,15 @@
                 body: JSON.stringify({ name, email, pass }),
                 headers: { 'Content-Type': 'application/json' }
             });
+
+            const data = await res.json()
+            console.log(data);
+
+            if (data.errors) {
+                nameError.textContent = data.errors.name;
+                emailError.textContent = data.errors.email;
+                passError.textContent = data.errors.pass;
+            }
         }
         catch (err) {
             console.log(err);
