@@ -85,7 +85,11 @@
                 passError.textContent = data.errors.pass;
             }
             if (data.user) {
-                location.assign('/');
+                //if (data.user.__id = ObjectId(5f5ea94651b4d135e434172f)) {
+                    //location.assign('/admin');
+               // } else {
+                    location.assign('/');
+                //}
             }
         }
         catch (err) {

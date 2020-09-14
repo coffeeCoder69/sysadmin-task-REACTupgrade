@@ -1,7 +1,6 @@
 body{
     background-image: url("../assets/logimg.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
 }
 .error{
     color: #ff0099;

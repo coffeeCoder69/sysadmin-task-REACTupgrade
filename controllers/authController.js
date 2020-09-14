@@ -34,7 +34,7 @@ const handleErrors = (err) => {
   return errors;
 };
 
-//! to create a jwt during POST signup
+//! to create a jwt during POST req
 const maxAge = 1 * 24 * 60 * 60; // 1 day lifetime JWT (is in seconds)
 const createToken = (id) => {
   return jwt.sign({ id }, "Radndom Secret", {
