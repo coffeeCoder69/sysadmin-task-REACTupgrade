@@ -18,3 +18,18 @@ const connect = mongoose.connect(url, {
 connect.then((db) => {
   console.log('Connected correctly  to Server');
 }, (err) => { console.log(err) });
+
+
+ROUTES LEFT:
+/user
+/user/events
+
+/admin
+/admin/events
+/admin/users
+
+Tasks:
+Events model 
+Ejs files - frontend 
+
+password match works now
