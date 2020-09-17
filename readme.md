@@ -31,15 +31,15 @@ type - NON-ADMIN (BASIC)
 - MongoDB  
 (For other dependencies check out package.json file)  
 
-*** 
+***
 To run this Web Application on your local device,
 - Fork or Clone this repository
 - Create a **.env** file with environment variables **DATABSE_URL** assigned to your MongoDB Atlas or Local Data Base URL 
 - Use command **npm install** to get the **node_modules** folder with the required dependencies
 - Run the script **npm run devStart** or (any other script of your choice by modifying the package.json file).
 - Open **http://localhost:3000** (or set the port of your choice in the app.js file)
-***
 
+*** 
 #### Contributors
 - Front-End: [Simha](https://github.com/Simha55) & [Shuvam](https://github.com/coffeeCoder69)
 - Back-End: [Shaun](https://github.com/ShadowRnG) & [Vasudev](https://github.com/kinivasu)
