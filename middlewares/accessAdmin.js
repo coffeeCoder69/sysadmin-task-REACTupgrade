@@ -11,7 +11,7 @@ const requireAdmin = (req, res, next) => {
         res.redirect("/login");
         console.log(err.message);
       } else {
-        console.log(decodedToken);
+        //console.log(decodedToken);
         if (decodedToken.id == process.env.ADMIN_ID) {
           // admin id
           next();
