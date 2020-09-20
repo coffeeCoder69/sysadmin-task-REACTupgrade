@@ -7,7 +7,7 @@
 
     <title>Log In</title>
     <link rel="icon" href="assets/tt.png">
-    <link rel="stylesheet" href="styles/login-signup.css">
+    <link rel="stylesheet" href="/styles/login-signup.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -60,6 +60,7 @@
 
 </body>
 <script>
+    //require("dotenv").config();
     const form = document.querySelector('form');
     const emailError = document.querySelector('.email.error');
     const passError = document.querySelector('.pass.error');
@@ -85,11 +86,11 @@
                 passError.textContent = data.errors.pass;
             }
             if (data.user) {
-                //if (data.user.__id = ObjectId(5f5ea94651b4d135e434172f)) {
-                    //location.assign('/admin');
-               // } else {
-                    location.assign('/');
-                //}
+                // if (data.user.__id = process.env.ADMIN_ID)) {
+                // location.assign('/admin');
+                // } else {
+                location.assign('/user');
+                // }
             }
         }
         catch (err) {
