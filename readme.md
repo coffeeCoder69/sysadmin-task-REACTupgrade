@@ -2,6 +2,14 @@
 <!--* Use Ctrl+K V to preview the markdown file in VS code-->
 <!--* How to write an effective markdown: https://medium.com/echohub/write-simple-and-effective-markdown-tips-8e01fdddd70 -->
 
+# This is a version, which plans to replace the existing frontend with REACT. Please [click here](https://github.com/kinivasu/sysadmin-task) to go to the original version.
+.  
+.  
+.  
+.  
+.  
+.  
+
 # SysAdmin Task-1 Portal
 ## Team 3
 
